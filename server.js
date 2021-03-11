@@ -10,10 +10,10 @@ const express = require('express');
 const app = express();
 
 app.use(requireHTTPS);
-app.use(express.static('./dist/carpedev-app'));
+app.use(express.static('./dist'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/carpedev-app/'}),
+    res.sendFile('index.html', {root: 'dist'}),
 );
 
 app.listen(process.env.PORT || 8080);
